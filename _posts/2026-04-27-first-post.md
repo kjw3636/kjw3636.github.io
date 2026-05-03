@@ -12,5 +12,6 @@ author: 김정웅
 오늘은 **Jekyll**을 활용해 첫 블로그 글을 씁니다.
 
 ![김정웅의 책상 풍경](/assets/img/gettyimages-1488493940-170667a.jpg)
+>출처: https://www.gettyimages.com/detail/photo/co-sharing-office-with-open-plan-concept-with-royalty-free-image/1488493940
 
 앞으로 수업에서 배운 내용을 이곳에 정리할 예정입니다.
