@@ -69,11 +69,11 @@ const targets = ["이", "의", "날", "개", "소"];
 //02 
 
 const counts = targets.map(t => countChar(text, t));
-
+console.log(counts)
 //03
 
 for (let i = 0; i < targets.length; i++ ) {
-    console.log(`${targets[i]}: ${counts[i]}번`)
+    console.log(`'${targets[i]}': ${counts[i]}번`)
 }
 
 //04
@@ -87,4 +87,4 @@ for (let i = 1; i < counts.length; i++) {
     if (counts[i] > counts[maxIdx]) maxIdx = i;
 }
 const TT = targets[maxIdx];
-console.log(`가장 자주 나온 글자: '${TT}' "(${counts[maxIdx]}번)"`);
+console.log(`가장 자주 나온 글자: '${TT}' (${counts[maxIdx]}번)`);
