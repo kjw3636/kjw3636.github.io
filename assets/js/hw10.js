@@ -17,10 +17,10 @@ function classifyEra(year){
     }    
 }
 
-console.log(`1913년: ${classifyEra(1913)}"`)
-console.log(`810년: ${classifyEra(810)}"`)
-console.log(`1992년: ${classifyEra(1992)}"`)
-console.log(`1956년: ${classifyEra(1956)}"`)
+console.log(`1913년: ${classifyEra(1913)}`)
+console.log(`810년: ${classifyEra(810)}`)
+console.log(`1992년: ${classifyEra(1992)}`)
+console.log(`1956년: ${classifyEra(1956)}`)
 
 //Q2
 
@@ -32,7 +32,7 @@ console.log(works[0])
 console.log(works[works.length - 1])
 
 //2
-const titled = works.map(work => '「${work}」');
+const titled = works.map(work => `「${work}」`);
 console.log(titled);
 
 //3
@@ -49,15 +49,15 @@ for (let i = 0; i < long.length; i++) {
 function countChar(text, target){
     let count = 0;
     for (const ch of text) {
-        if (Ch === target) count++;
+        if (ch === target) count++;
     }
     return count;
 
 }
 
-console.log(`"박씨는 이씨에게 시집간 김씨의 외사촌 동생이다."에서 '씨'는 ${countchar("박씨는 이씨에게 시집간 김씨의 외사촌 동생이다.", "씨")}번 등장합니다.`)
-console.log(`"이상의 「날개」는 1936년 작품이다."에서 '이'는${countChar("이상의 「날개」는 1936년 작품이다."), "이"}번 등장합니다.`)
-console.log(`"banana"에서 'a'는 ${countChar("banana", "a")}`번 등장합니다.)
+console.log(`"박씨는 이씨에게 시집간 김씨의 외사촌 동생이다."에서 '씨'는 ${countChar("박씨는 이씨에게 시집간 김씨의 외사촌 동생이다.", "씨")}번 등장합니다.`)
+console.log(`"이상의 「날개」는 1936년 작품이다."에서 '이'는${countChar("이상의 「날개」는 1936년 작품이다.", "이")}번 등장합니다.`)
+console.log(`"banana"에서 'a'는 ${countChar("banana", "a")}번 등장합니다.`)
 
 //Q4
 
@@ -87,4 +87,4 @@ for (let i = 1; i < counts.length; i++) {
     if (counts[i] > counts[maxIdx]) maxIdx = i;
 }
 const TT = targets[maxIdx];
-console.log(`가장 자주 나온 글자: '${TT}' (${counts[maxIdx]}번`);
+console.log(`가장 자주 나온 글자: '${TT}' ${"(counts[maxIdx]}번)"`);
