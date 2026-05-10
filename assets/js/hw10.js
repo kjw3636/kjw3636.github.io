@@ -17,10 +17,11 @@ function classifyEra(year){
     }    
 }
 
-console.log(`1913년: ${classifyEra(1913)}`)
-console.log(`810년: ${classifyEra(810)}`)
-console.log(`1992년: ${classifyEra(1992)}`)
-console.log(`1956년: ${classifyEra(1956)}`)
+const years = [1913, 810, 1992, 1956]
+for (year of years) {
+    console.log(`${year}년: ${classifyEra(year)}`)
+}
+
 
 //Q2
 
