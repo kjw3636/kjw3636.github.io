@@ -16,7 +16,7 @@ const counts = targets.map(t => countChar(text, t));
 console.log(counts); 
 
 // 빈도 목록을 <ul>에 채우기
-const list = document.querySelector("freq-list");
+const list = document.querySelector("#freq-list");
 
 for (let i = 0; i < targets.length; i++) {
     const li = document.createElement("li");
