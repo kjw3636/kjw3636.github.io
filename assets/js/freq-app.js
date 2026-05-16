@@ -24,7 +24,7 @@ form.addEventListener("submit", (e) => {
     drawTop(targets, counts);
 }); 
 
-function drawList(targets, coounts) {
+function drawList(targets, counts) {
     list.textContent = "";
     for (let i = 0; i < targets.length; i++) {
         const li = document.createElement("li");
@@ -36,7 +36,7 @@ function drawList(targets, coounts) {
 function drawTop(targets, counts)   {
     let maxIdx = 0;
     for (let i = 1; i < counts.length; i++) {
-        if (couints[i] > counts[maxIdx]) maxIdx = i;
+        if (counts[i] > counts[maxIdx]) maxIdx = i;
     }
     topBox.textContent =
         `가장 자주 나온 글자: ${targets[maxIdx]} ${counts[maxIdx]}번`;
