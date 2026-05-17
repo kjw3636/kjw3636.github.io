@@ -3,14 +3,14 @@
 
 //Q1
 const themeBtn = document.querySelector("#theme-btn");
-const q1Bx = document.querySelector("q1-box");
+const q1Bx = document.querySelector("#q1-box");
 themeBtn.addEventListener("click", () => {
     q1Bx.classList.toggle("dark");
 
-    if (themeBtn.textContent === "라이트 모드") {
+    if (themeBtn.textContent === "라이트모드") {
     themeBtn.textContent = "다크모드"
     } else {
-    themeBtn.textContent = "라이트 모드"
+    themeBtn.textContent = "라이트모드"
     }
 });
 
