@@ -19,7 +19,16 @@ themeBtn.addEventListener("click", () => {
 
 
 
-
 //Q2
 const input = document.querySelector("#q2-input");
-input.addEventListener("input", (e) => {});
+const count = document.querySelector("#q2-count");
+const warn = document.querySelector("#q2-warn");
+
+input.addEventListener("input", (e) => {
+    count.textContent = e.target.value.length;
+    if (count.textContent >= 100) {
+        warn.textContent = "100자를 넘었습니다."};
+        {warn.style.color = "crimson"};
+    else {warn.textContent = ""};
+
+});
