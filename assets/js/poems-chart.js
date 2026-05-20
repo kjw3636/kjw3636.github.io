@@ -26,6 +26,12 @@ function drawChart(rows) {
         data: {
             labels: labels,
             datasets: [{ label: "작품 편수", data: counts }],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.6)", // 분홍
+                "rgba(54, 162, 235, 0.6)", // 파랑
+                "rgba(255, 206, 86, 0.6)", // 노랑
+                "rgba(75, 192, 192, 0.6)", // 청록
+            ]
         },
     });
 }
