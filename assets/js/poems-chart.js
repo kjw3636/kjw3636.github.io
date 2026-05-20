@@ -33,5 +33,15 @@ function drawChart(rows) {
                 "rgba(75, 192, 192, 0.6)", // 청록
             ]
         },
+        options: {
+            plugins: {
+                title: { display: true, text: "작가별 작품 편수" },
+                legend: { display: true},
+            },
+            scales: {
+                y: { beginAtZero: true, title: {display: true, text: "편수"} },
+                x: {                    title: {display: true, text: "작가"} },
+            },
+        },
     });
 }
