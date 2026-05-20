@@ -17,7 +17,7 @@ fetch("/data/poems.csv")
     });
 
 function drawChart(rows) {
-    const labels = rows.map(r => r.authot); //행 하나에서 label은 author를 가져옴
+    const labels = rows.map(r => r.author); //행 하나에서 label은 author를 가져옴
     const counts = rows.map(r => r.count); //counts는 행 하나에서 count를 가져옴
 
     const canvas = document.querySelector("#poems-chart");
