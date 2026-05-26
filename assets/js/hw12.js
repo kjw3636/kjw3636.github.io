@@ -31,10 +31,3 @@ fetch("/data/sillok.json")
     
     });
 });
-
-// Q2
-fetch("/data/nobel-literature.csv")
-.then(response => response.text())
-.then(csv => {
-...
-});
