@@ -29,6 +29,7 @@ fetch("/data/sillok.json")
 
         }
     
+    });
 });
 
 // Q2
