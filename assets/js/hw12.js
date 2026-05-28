@@ -14,7 +14,7 @@ fetch("/data/sillok.json")
         data: {
             labels: labels,
             datasets: [{ 
-                        label:"왕 이름", 
+                        label:"권수", 
                         data: counts ,
                         backgroundColor: ["rgba(54, 162, 235, 0.6)"]
                             
@@ -56,7 +56,7 @@ fetch("/data/nobel-literature.csv")
         data: {
             labels: labels,
             datasets: [{
-                label: "연도",
+                label: "수상자 수",
                 data: counts,
                 borderColor: "rgba(54, 162, 235, 1)",
                 backgroundColor: "rgba(54, 162, 235, 0.2)"
