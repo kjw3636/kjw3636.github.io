@@ -5,8 +5,8 @@
 fetch("/data/sillok.json")
 .then(response => response.json())
 .then(json => {
-    const labels = json.map(record => record.king)
-    const counts = json.map(record => record.volumes)
+    const labels = json.map(r => r.king)
+    const counts = json.map(r => r.volumes)
 
     const canvas = document.querySelector("#q1-chart")
     new Chart(canvas, {
