@@ -36,16 +36,15 @@ fetch("/data/sillok.json")
 fetch("/data/nobel-literature.csv")
 .then(response => response.text())
 .then(csv => {
-    const row = csv
+    const rows = csv
     .split("\n")
     .slice(1)
     .filter(line => line.trim() !== "")
     .map(line => {
         const cols = line.split(",");
         return {
-            year: Number(cols[0]),
-            name: cols[1].trim(),
-            country: cols[2].trim(),
+            decade: Number(cols[0]),
+            count: Number(cols[1]),
         };
     });
     const labels = rows.map(r => `${r.decade}년대`);
@@ -59,8 +58,8 @@ fetch("/data/nobel-literature.csv")
             datasets: [{
                 label: "연도",
                 data: counts,
-                borderColor: ["rgba(54, 162, 235, 1)"],
-                backgroundColor: ["rgba(54, 162, 235, 0.2)"]
+                borderColor: "rgba(54, 162, 235, 1)",
+                backgroundColor: "rgba(54, 162, 235, 0.2)"
             }]
         },
         options: {
