@@ -44,7 +44,7 @@ function analyze(text, stopwords) {
     const body = extractBody(text);
     const words = getWords(body);
     const cleaned = removeStopwords(words, stopwords);
-    const counts = countWorlds(cleaned);
+    const counts = countWords(cleaned);
     return topN(counts, 30);
 }
 
