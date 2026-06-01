@@ -48,3 +48,40 @@ function analyze(text, stopwords) {
     return topN(counts, 30);
 }
 
+Promise.all([
+    fetch("/data/scarlet.txt").then(r => r.text()),
+    fetch("/data/hound.txt").then(r => r.text()),
+    fetch("/data/stopwords-en.txt").then(r => r.text()),
+]).then(([scarletText, houndText, stopwordsText]) => {
+    const stopwords = stopwordsText.split(/\s+/)
+                                   .filter(w => w.length >0);
+    const scarletTop = analyze(scarletText, stopwords);
+    const houndTop = analyze(houndText, stopwords);
+    drawChart("#chart-scarlet", scarletTop,
+              "rgba(220, 53, 69, 0.6)");
+    drawChart("#chart-hound", houndTop,
+              "rgba(54, 162, 235, 0.6)")
+});
+
+function drawChart(selector, top, color) {
+    const canvas = document.querySelector(selector);
+    new Chart(canvas, {
+        type: "bar",
+        data: {
+            labels: top.map(item => item[0]), //x축은 0번 인덱스인 단어
+            datasets: [{
+                label: "빈도", data: top.map(item => item[1]), //y축은 1번 인덱스인 빈도수
+                backgroundColor: color,
+            }],
+        },
+        options: {
+            indexAxis: "y", // 가로로 긴 막대
+            maintainAspectRatio: false, // 비율 보존 안 함 --> 아래로 긴 그림
+            scales: {
+                x: { beginAtZero: true }, // 막대 그래프 옵션: 0부터 시작
+                y: { ticks: { autoSkip: false } }, //skip 막음 
+
+            },
+        },
+    });
+}
