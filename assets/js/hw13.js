@@ -57,13 +57,21 @@ function drawChart(selector, top, color) {
     });
 }
 
+function analyze(text, stopwords) {
+    const body = extractBody(text);
+    const words = getWords(body);
+    const cleaned = removeStopwords(words, stopwords);
+    const counts = countWords(cleaned);
+    return topN(counts, 30);
+}
+
 // --- 메인: 세 파일을 동시에 fetch ---
 Promise.all([
     fetch("/data/frankenstein.txt").then(r => r.text()),
     fetch("/data/dracula.txt").then(r => r.text()),
     fetch("/data/stopwords-en.txt").then(r => r.text()),
 ]).then(([frankText, dracText, stopText]) => {
-    const stopwords = stopwordsText.split(/\s+/)
+    const stopwords = stopText.split(/\s+/)
                                       .filter(w => w.length >0);
     const frankTop = analyze(frankText, stopwords);
     const dracTop = analyze(dracText, stopwords);
