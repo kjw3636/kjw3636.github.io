@@ -1,0 +1,40 @@
+---
+layout: page
+title: [숙제13] 텍스트 분석 도구 구현
+permalink: /gothic/
+---
+
+# [숙제13] 텍스트 분석 도구 구현
+
+<!-- Q1: 두 고딕 소설의 상위 30개 단어 비교-->
+<h2>Frankenstein vs. Dracula -- 상위 30개 단어</h2>
+<div style="display: flex; gap: 1em;">
+    <div style="flex: 1;">
+        <h3>Frankenstein (Shelley, 1818)</h3>
+        <div style="height: 600px;">
+            <canvas id="chart-frankenstein"></canvas>
+        </div>
+    </div>
+    <div style="flex: 1;">
+        <h3>Dracula (Stoker, 1897)</h3>
+        <div style="height: 600px;">
+            <canvas id="chart-dracula"></canvas>
+        </div>
+    </div>
+</div>
+<!-- Q2: 보고서 (아래에 작성) -->
+## 보고서
+
+### 추가한 불용어와 근거
+
+NLTK 기본 목록 외에 다음 15개의 단어를 `data/stopwords-custom.txt`에
+추가했다.: 'one','could', 'upon', 'might', 'shall', 'elizabeth', 'helsing', 'every', 'even', 'us', 'mina', 'lucy', 'van', 'may', 'would'
+
+이 분석에서는 단어 빈도를 통해 두 고딕 소설이 각각 가지고 있는 주제의식을 읽을 수 있길 바랐다. 때문에 one, us와 같은 대명사나 could, might와 같은 조동사와 even과 같은 부사들은 의미보다는 문체의 특성을 보여준다고 판단해 제외했다. 또한 'van'이나 'elizabeth'와 같은 인명 또한 빈도수를 통해 작품의 주제를 나타낸다고 보기에는 어렵다고 판단해 제외 했다.
+
+### 두 작품의 단어 빈도가 들려주는 이야기
+두 작품 모두 eyes, face, hand와 같이 외양을 나타내는 단어가 높은 빈도에 위치해있다.  이는 두 작품 모두 호러 소설로서 프랑켄슈타인의 괴물과 드라큘라 백작의 공포스러운 외양을 자주 묘사하기 때문으로 생각된다. 하지만 드라큘라와 달리 프랑켄슈타인에는 mind, heart, feelings 등 감정과 관련한 묘사가 자주 나타나는데, 이는 흉측한 외모를 가졌지만 인간적인 마음을 가진 괴물을 통해 인간성에 대한 고뇌를 보여주는 작품의 주제를 잘 드러낸다. 반면 드라큘라에는 seemed, took, night, room 등 외양이나 행동 또는 장소처럼 겉으로 드러나는 외면적 묘사를 위한 단어들이 많았다. 이는 드라큘라가 프랑켄슈타인보다 외적인 것을 상세히 묘사에 작품의 공포스러운 분위기를 강조하려했다고 볼 수 있다.
+
+{% include chartjs.html %}
+<script src="/assets/js/analysis.js"></script>
+<script src="/assets/js/gothic.js"></script>
